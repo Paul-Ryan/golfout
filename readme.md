@@ -20,7 +20,7 @@ Each time the ball hits a brick or the paddle there is an accompanying visual an
 ## Implementation Timeline
 
 **Over the weekend**
-* general panic
+* general panic, would be more excited, but feel super lost
 * read canvas tutorial and get a game area setup
 
 **Day 1:** Get the basic canvas structure up and write some scrips to create game elements

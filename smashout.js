@@ -12,15 +12,9 @@ const canvasEl = document.getElementById("smashout");
 const ctx = canvasEl.getContext("2d");
 const game = new Game(ctx, canvasEl);
 
-let paddlePos = [canvasEl.width/2, canvasEl.height - 20];
-let paddle = new Paddle();
-function draw() {
-  // ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
-  // ball.drawBall();
-  // ball.moveBall();
-  paddle.drawPaddle(paddlePos);
-  game.draw(ctx);
 
+function draw() {
+  game.draw(ctx);
 }
 
 setInterval(draw, 1000/60);

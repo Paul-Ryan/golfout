@@ -13,9 +13,9 @@ const ctx = canvasEl.getContext("2d");
 const ball = new Ball();
 ball.drawBall();
 
-let x = canvasEl.width/2;
-let y = canvasEl.height - 30;
-let dx = 1;
+let x = 300;
+let y = canvasEl.height - 10;
+let dx = 1.5;
 let dy = -2;
 
 function draw() {

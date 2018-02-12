@@ -6,7 +6,7 @@ GolfOut is a game based loosely on the classic Atari game Breakout. The main twi
 
 Users progress through levels of increasing difficulty by attempting to shoot and catch the ball the to reach a hole in the fewest number of bounces to clear a level.
 
-Each time the ball hits a wall or the paddle there is an accompanying visual and audio experience, which will be cool, but the users score goes up by one.
+Each time the ball hits a wall or the paddle there is an accompanying visual and audio experience, which will be cool, but the users score goes up by one, which will be bad.
 
 ## Functionality & MVP
 
@@ -19,7 +19,7 @@ Each time the ball hits a wall or the paddle there is an accompanying visual and
 ## Wireframes
 ````
 __________________________
-|                         |
+| score: 3                |
 |     _______0_____       |
 |     |_|_|_|_|_|_|       |
 |     |_|_|_|_|_|_|       |
@@ -33,14 +33,13 @@ __________________________
 ## Implementation Timeline
 
 **Over the weekend**
-* general panic
 * read canvas tutorial and get a game area setup
 * get ball rendered
 
 ### Day 1:
 Get the basic canvas structure up and write some scrips to create game elements including ball, walls, and paddle
 ### Day 2:
-Continue day 1, add powerups, levels, and start to make the game juicy (eg. bounce animation, bricks break apart, colors change on level-up)
+Continue day 1, add powerups, levels, and start to make the game juicy (eg. bounce animation, walls break apart, colors change on level-up, backgrounds)
 ### Day 3:
 Learn Web Audio API and play some sounds during the game
 ### Day 4:

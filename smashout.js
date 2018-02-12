@@ -14,31 +14,33 @@ const ctx = canvasEl.getContext("2d");
 const ball = new Ball();
 const paddle = new Paddle();
 
-ball.drawBall();
-paddle.drawPaddle();
+let ballPos = [canvasEl.width/2, canvasEl.height - 10];
+let movement = [1.4, -2];
+// let dx = 1.2;
+// let dy = -2;
 
-let x = 300;
-let y = canvasEl.height - 10;
-let dx = 1.5;
-let dy = -2;
+let paddlePos = [canvasEl.width/2, canvasEl.height - 20];
 
 function draw() {
   ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
-  ball.drawBall(x, y);
-  x += dx;
-  y += dy;
-  if (y + dy < ball.radius) {
-    dy = -dy;
+  ball.drawBall(ballPos);
+  paddle.drawPaddle(paddlePos);
+
+  ballPos[0] += movement[0];
+  ballPos[1] += movement[1];
+
+  if (ballPos[1] < ball.radius) {
+    movement[1] *= -1;
   }
-  if (x + dx > canvasEl.width - ball.radius) {
-    dx = -dx;
+  if (ballPos[0] > canvasEl.width - ball.radius) {
+    movement[0] *= -1;
   }
-  if (y + dy > canvasEl.height - ball.radius) {
-    dy = -dy;
+  if (ballPos[1] > canvasEl.height - ball.radius) {
+    movement[1] *= -1;
   }
-  if (x + dx < ball.radius) {
-    dx = -dx;
+  if (ballPos[0] < ball.radius) {
+    movement[0] *= -1;
   }
 }
 
-setInterval(draw, 10);
+setInterval(draw, 1000/60);

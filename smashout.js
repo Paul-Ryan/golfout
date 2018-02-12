@@ -15,13 +15,17 @@ ball.drawBall();
 
 let x = canvasEl.width/2;
 let y = canvasEl.height - 30;
-let dx = 2;
+let dx = 0;
 let dy = -2;
 
 function draw() {
+  ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
   ball.drawBall(x, y);
   x += dx;
   y += dy;
+  if(y + dy < 0) {
+    dy = -dy;
+  }
 }
 
 // setInterval(draw, 10);

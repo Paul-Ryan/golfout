@@ -25,9 +25,12 @@ Each time the ball hits a brick or the paddle there is an accompanying visual an
 
 ### Day 1:
 Get the basic canvas structure up and write some scrips to create game elements
-### Day 2: Continue day 1
-### Day 3: Learn Web Audio API and play some sounds during the game
-### Day 4: Style the front end and add instructions
+### Day 2:
+Continue day 1
+### Day 3:
+Learn Web Audio API and play some sounds during the game
+### Day 4:
+Style the front end and add instructions
 
 
 ## Technologies

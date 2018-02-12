@@ -1,26 +1,26 @@
-# SmashOut
+# GolfOut
 
 ## Background and Overview
 
-SmashOut is a game based on the classic Atari game Breakout
+GolfOut is a game based loosely on the classic Atari game Breakout. The main twist will be that instead of breaking bricks to clear a level, users will attempt to get the ball in the hole in the fewest number of bounces.
 
-Users progress through levels of increasing difficulty by attempting to use a paddle to bounce a ball into brick objects to destroy them. If the ball flies past the user's paddle, the game ends.
+Users progress through levels of increasing difficulty by attempting to shoot and catch the ball the to reach a hole in the fewest number of bounces to clear a level.
 
-Each time the ball hits a brick or the paddle there is an accompanying visual and audio experience, which will be cool.
+Each time the ball hits a wall or the paddle there is an accompanying visual and audio experience, which will be cool, but the users score goes up by one.
 
 ## Functionality & MVP
 
- * Users can control the paddle and reflect the ball
- * Ball destroys bricks and bounces back
- * Score points when bricks are destroyed
- * Power-ups drop from special bricks and can be collected by paddle
- * Play sound when the ball destroys bricks or encounters the paddle
+ * Users can control the paddle, catch and shoot the ball
+ * Ball destroys walls and recognizes when the level is over.
+ * Points are added with each ball bounce.
+ * Power-ups drop from special walls and can be collected by paddle
+ * Play sound when the ball destroys walls or encounters the paddle
 
 ## Wireframes
 ````
 __________________________
 |                         |
-|     ____________        |
+|     _______0_____       |
 |     |_|_|_|_|_|_|       |
 |     |_|_|_|_|_|_|       |
 |                         |
@@ -38,7 +38,7 @@ __________________________
 * get ball rendered
 
 ### Day 1:
-Get the basic canvas structure up and write some scrips to create game elements including ball, bricks, and paddle
+Get the basic canvas structure up and write some scrips to create game elements including ball, walls, and paddle
 ### Day 2:
 Continue day 1, add powerups, levels, and start to make the game juicy (eg. bounce animation, bricks break apart, colors change on level-up)
 ### Day 3:

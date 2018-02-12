@@ -15,7 +15,7 @@ ball.drawBall();
 
 let x = canvasEl.width/2;
 let y = canvasEl.height - 30;
-let dx = 0;
+let dx = 1;
 let dy = -2;
 
 function draw() {
@@ -23,9 +23,18 @@ function draw() {
   ball.drawBall(x, y);
   x += dx;
   y += dy;
-  if(y + dy < 0) {
+  if (y + dy < ball.radius) {
     dy = -dy;
+  }
+  if (x + dx > canvasEl.width - ball.radius) {
+    dx = -dx;
+  }
+  if (y + dy > canvasEl.height - ball.radius) {
+    dy = -dy;
+  }
+  if (x + dx < ball.radius) {
+    dx = -dx;
   }
 }
 
-// setInterval(draw, 10);
+setInterval(draw, 10);

@@ -13,8 +13,7 @@ const game = new Game(ctx, canvasEl);
 
 document.addEventListener("keydown", game.keyDownHandler);
 document.addEventListener("keyup", game.keyUpHandler);
-
-
+document.addEventListener("mousemove", game.mouseMoveHandler, false);
 
 function draw() {
   game.draw(ctx);

@@ -22,3 +22,17 @@ function draw() {
 
 setInterval(draw, 1000/60);
 // setInterval(draw, 2000);
+
+
+// todo:
+
+// adjust bounce based on paddle contact point
+// add hole
+// add victory/loss messages
+// learn about requestAnimationFrame
+// improve physics of ball
+// improve physics of bounces
+// add powerup
+// add level 2
+
+// add sound effects

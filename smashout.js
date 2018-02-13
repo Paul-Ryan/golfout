@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // X adjust bounce based on paddle contact point
 // X add hole
 // X add victory/loss messages
+// add powerup
 // learn about requestAnimationFrame
 // improve physics of ball
 // improve physics of bounces
-// add powerup
 // add level 2
 // add start message and kepress to start
 

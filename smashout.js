@@ -26,7 +26,7 @@ setInterval(draw, 1000/60);
 
 // todo:
 
-// adjust bounce based on paddle contact point
+// X adjust bounce based on paddle contact point
 // add hole
 // add victory/loss messages
 // learn about requestAnimationFrame

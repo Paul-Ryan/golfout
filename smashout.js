@@ -1,12 +1,15 @@
 import Game from './lib/game.js';
 import Ball from './lib/ball.js';
 import Paddle from './lib/paddle.js';
-// import GameView from './lib/game_view.js';
+import GameView from './lib/game_view.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   const canvasEl = document.getElementById("smashout");
+  canvasEl.width = Game.DIM_X;
+  canvasEl.height = Game.DIM_Y;
   const ctx = canvasEl.getContext("2d");
   const game = new Game(ctx, canvasEl);
+  new GameView(game, ctx);
   game.addListeners();
   game.start();
 

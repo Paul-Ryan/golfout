@@ -23,5 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // improve physics of bounces
 // add level 2
 // add start message and kepress to start
+// add block health
 
 // add sound effects

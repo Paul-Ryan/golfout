@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // X add powerup
 // X powerup messages
 // learn about requestAnimationFrame
+// //  http://dev.bennage.com/blog/2012/12/07/game-dev-01/
 // improve physics of ball
 // improve physics of bounces
 // add level 2
@@ -29,3 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // refactor to allow resizing of level
 
 // add sound effects
+// // add paddle and put bounce on bricks
+// // setup start screen, allow mute
+// // add end game
+// // add effects to all objects
+// // imporove sound with web audio api

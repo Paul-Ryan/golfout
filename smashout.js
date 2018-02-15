@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   canvasEl.height = Game.DIM_Y;
   const ctx = canvasEl.getContext("2d");
   const game = new Game(ctx, canvasEl);
-  new GameView(game, ctx);
   game.addListeners();
-  game.start();
+  new GameView(game, ctx).beginLoop();
+  // game.start();
 
 });
 

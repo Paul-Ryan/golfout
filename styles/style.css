@@ -1,18 +1,14 @@
 body {
   background: #eeeeee;
   font-family: 'Source Sans Pro', sans-serif;
-}
-
-h1, p {
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
+  background: url("https://res.cloudinary.com/paul-ryan/image/upload/v1518723889/golf-small.jpg");
+  background-size: cover;
 }
 
 #smashout {
   background: #35B043;
   display: block;
-  margin: 0 auto;
-  border: 3px solid #5e3710;
+  margin: 30px auto 0;
+  border: 3px solid #000;
   border-radius: 3px;
 }

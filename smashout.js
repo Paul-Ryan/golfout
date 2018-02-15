@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   canvasEl.width = Game.DIM_X;
   canvasEl.height = Game.DIM_Y;
   const ctx = canvasEl.getContext("2d");
-  const game = new Game(ctx, canvasEl).start();
+  const game = new Game(ctx, canvasEl).render();
 });
 
 

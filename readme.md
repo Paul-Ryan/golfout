@@ -1,54 +1,68 @@
 # GolfOut
+![logo](smashout/docs/logo.png)
 
 ## Background and Overview
 
-GolfOut is a game based loosely on the classic Atari game Breakout. The main twist will be that instead of breaking bricks to clear a level, users will attempt to get the ball in the hole in the fewest number of bounces.
+![intro](smashout/docs/ball.gif)
 
-Users progress through levels of increasing difficulty by attempting to shoot and catch the ball the to reach a hole in the fewest number of bounces to clear a level.
+GolfOut is a game based loosely on the classic Atari game Breakout. It's a exploration of a classic game genre, with my own personal twist.
 
-Each time the ball hits a wall or the paddle there is an accompanying visual and audio experience, which will be cool, but the users score goes up by one, which will be bad.
+Users progress through levels of increasing difficulty by attempting to bounce the ball into a hole obscured by blocks in the fewest number of bounces to clear a level.
 
-## Functionality & MVP
+## Features
 
- * Users can control the paddle, catch and shoot the ball
- * Ball destroys walls and recognizes when the level is over.
- * Points are added with each ball bounce.
- * Power-ups drop from special walls and can be collected by paddle
- * Play sound when the ball destroys walls or encounters the paddle
+ * Simple hit detection and bounce physics.
+ * Object-like classes, allowing game elements to track their own state
+ * Collect powerups to lower your score as you play
+ * Compete to try and get the lowest score!
 
-## Wireframes
-````
-__________________________
-| score: 3                |
-|     _______0_____       |
-|     |_|_|_|_|_|_|       |
-|     |_|_|_|_|_|_|       |
-|                         |
-|         .               |
-|           ___           |
-|_________________________|
+### Game objects inherit from game object prototype
+I built a simple game object protoype that I could base my bricks, ball, and paddle on to keep the code DRY and to keep the game objects behavior predictable.
+```JavaScript
+export default class GameObject {
+  constructor(options = {}) {
+    this.pos = options.pos;
+    this.color = options.color;
+    this.game = options.game;
+  }
+```
 
-````
+### Simple hit detection for game objects
 
-## Implementation Timeline
+![bounce](smashout/docs/dblbounce.gif)
+The game objects are simple shapes, so it's possible to create good hit detection with simple math. For the hole and the ball, anytime the distance between their centers is less than their combined radiuses, we know they're in contact.
+```JavaScript
+contactWith(ball) {
+  let widths = this.radius + ball.radius;
+  let distance = Util.dist(ball.pos, this.pos);
+  if (widths > distance) {
+    this.game.level += 1;
+  }
+}
+```
 
-**Over the weekend**
-* read canvas tutorial and get a game area setup
-* get ball rendered
-
-### Day 1:
-Get the basic canvas structure up and write some scrips to create game elements including ball, walls, and paddle
-### Day 2:
-Continue day 1, add powerups, levels, and start to make the game juicy (eg. bounce animation, walls break apart, colors change on level-up, backgrounds)
-### Day 3:
-Learn Web Audio API and play some sounds during the game
-### Day 4:
-Style the front end and add instructions/controls
-
+### Paddle can be used to aim the shot
+![paddle](https://github.com/Paul-Ryan/smashout/blob/master/docs/bounce2.gif)
+I decided that because I would be developing this game in just a week, and because this was my first game, I wouldn't try to recreate real paddle/ball physics. Instead, the paddle modifies the balls trajectory based on how far from the center of the paddle the ball impacts The further from the center, the more the ball is pushed to the left or the right.
+```JavaScript
+if (Math.abs(paddleMid - ball.pos[0]) < offset) {
+  // distance ball impacts from mid (-1 to 1)
+  let angelMod = (ball.pos[0] - paddleMid) / offset;
+  ball.vel[1] *= -1;
+  // controlls how much the impact location changes ball path
+  ball.vel[0] += angelMod * 3;
+  this.bounceSound.play();
+  this.game.score++;
+}
+```
 
 ## Technologies
 
 * Vanilla JavaScript for the game structure and logic
 * `HTML5 Canvas` for DOM manipulation and rendering the game
 * Webpack to bundle and serve various scripts
-* Web audio API for playing sound during the game
+
+## Future improvements
+
+* Add more realistic paddle physics, so ball responds to paddle motion.
+* Additional powerups and additional block types to stop players from reaching the hole.

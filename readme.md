@@ -1,9 +1,9 @@
 # GolfOut
-![logo](smashout/docs/logo.png)
+![logo](https://github.com/Paul-Ryan/smashout/blob/master/docs/logo.png)
 
 ## Background and Overview
 
-![intro](smashout/docs/ball.gif)
+![intro](https://github.com/Paul-Ryan/smashout/blob/master/docs/ball.gif)
 
 GolfOut is a game based loosely on the classic Atari game Breakout. It's a exploration of a classic game genre, with my own personal twist.
 
@@ -29,7 +29,8 @@ export default class GameObject {
 
 ### Simple hit detection for game objects
 
-![bounce](smashout/docs/dblbounce.gif)
+![bounce](https://github.com/Paul-Ryan/smashout/blob/master/docs/dblbounce.gif)
+
 The game objects are simple shapes, so it's possible to create good hit detection with simple math. For the hole and the ball, anytime the distance between their centers is less than their combined radiuses, we know they're in contact.
 ```JavaScript
 contactWith(ball) {
@@ -42,7 +43,9 @@ contactWith(ball) {
 ```
 
 ### Paddle can be used to aim the shot
+
 ![paddle](https://github.com/Paul-Ryan/smashout/blob/master/docs/bounce2.gif)
+
 I decided that because I would be developing this game in just a week, and because this was my first game, I wouldn't try to recreate real paddle/ball physics. Instead, the paddle modifies the balls trajectory based on how far from the center of the paddle the ball impacts The further from the center, the more the ball is pushed to the left or the right.
 ```JavaScript
 if (Math.abs(paddleMid - ball.pos[0]) < offset) {

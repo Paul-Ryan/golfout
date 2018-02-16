@@ -3,8 +3,6 @@
 
 ## Background and Overview
 
-![intro](https://github.com/Paul-Ryan/smashout/blob/master/docs/ball.gif)
-
 GolfOut is a game based loosely on the classic Atari game Breakout. It's a exploration of a classic game genre, with my own personal twist.
 
 Users progress through levels of increasing difficulty by attempting to bounce the ball into a hole obscured by blocks in the fewest number of bounces to clear a level.

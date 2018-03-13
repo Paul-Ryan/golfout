@@ -1,8 +1,11 @@
+
 body {
   background: #eeeeee;
   font-family: 'Source Sans Pro', sans-serif;
-  background: url("https://res.cloudinary.com/paul-ryan/image/upload/v1518723889/golf-small.jpg");
+  background: #007CAA url("https://res.cloudinary.com/paul-ryan/image/upload/v1518723889/golf-small.jpg");
   background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
 }
 
 #smashout {
@@ -14,6 +17,11 @@ body {
 }
 
 #sidebar {
-  width: 600px; 
-  margin: 5px auto;
+  font-size: 16px;
+  width: 600px;
+  margin: 5px auto 10px;
+}
+
+#sidebar button {
+  font-size: 16px; 
 }
